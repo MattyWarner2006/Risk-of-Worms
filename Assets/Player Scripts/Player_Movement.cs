@@ -17,6 +17,10 @@ public class Player_Movement : MonoBehaviour
     {
         playerRotation = movementInput.action.ReadValue<float>();
         body.transform.Rotate(0, 0, playerRotation * playerRotationSpeed);
-        body.linearVelocity = new Vector2(playerRotation * playerSpeed, body.linearVelocity.y);
+    }
+
+    private void FixedUpdate()
+    {
+        body.AddForce(transform.up * playerSpeed);
     }
 }

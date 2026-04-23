@@ -18,6 +18,6 @@ public class Segment_Script : MonoBehaviour
     private void Update()
     {
         transform.position = Vector3.Lerp(transform.position, segmentAhead.transform.position, Time.deltaTime * 30);
-        transform.eulerAngles = Vector3.Lerp(transform.eulerAngles, segmentAhead.transform.eulerAngles, Time.deltaTime * 30);
+        transform.rotation = Quaternion.Lerp(transform.rotation, segmentAhead.transform.rotation, Time.deltaTime * 20);
     }
 }
