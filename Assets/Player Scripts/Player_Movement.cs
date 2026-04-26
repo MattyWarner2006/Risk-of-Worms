@@ -7,6 +7,7 @@ public class Player_Movement : MonoBehaviour
     public InputActionReference sprintInput;
     public Rigidbody2D body;
     public float playerSpeed;
+    public float playerMaxSpeed;
     public float playerRotation;
     public float playerRotationSpeed = 1;
 
@@ -22,7 +23,7 @@ public class Player_Movement : MonoBehaviour
                 playerSpeed++;
                 break;
             case false:
-                playerSpeed = 20;
+                playerSpeed = playerMaxSpeed;
                 break;
         }
     }
