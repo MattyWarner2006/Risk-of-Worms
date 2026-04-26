@@ -4360,6 +4360,7 @@ MonoBehaviour:
   sprintInput: {fileID: -7471211009204490832, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   body: {fileID: 239429497}
   playerSpeed: 20
+  playerMaxSpeed: 20
   playerRotation: 1
   playerRotationSpeed: 1
 --- !u!61 &239429500

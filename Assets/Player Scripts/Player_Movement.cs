@@ -14,11 +14,13 @@ public class Player_Movement : MonoBehaviour
 
     void Update()
     {
+        //read input value then rotate the player
         playerRotation = movementInput.action.ReadValue<float>();
         body.transform.Rotate(0, 0, playerRotation * playerRotationSpeed);
 
         switch (sprintInput.action.IsInProgress())
         {
+            //increment players speed when activated
             case true:
                 playerSpeed++;
                 break;
@@ -30,6 +32,7 @@ public class Player_Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //give player constant movement
         body.AddForce(transform.up * playerSpeed);
     }
     
