@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Player_Attacks : MonoBehaviour
 {
-  public BoxCollider2D biteHitbox;
+  public CircleCollider2D biteHitbox;
 
 
   private void Start()

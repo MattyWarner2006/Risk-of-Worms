@@ -4339,6 +4339,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 11fd701c-d646-41b0-a93d-1638ca89338c
     m_ActionName: 'Player/Move[/Keyboard/d,/Keyboard/a]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 40c585ed-2b53-403e-ab36-8049c8c7d8bd
+    m_ActionName: 'Player/Spit Attack[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
