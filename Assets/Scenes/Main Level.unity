@@ -4421,8 +4421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e46373dfd3cfe044b6b868e76a25b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftMargin: -90
-  rightMargin: 90
+  leftMargin: -100
+  rightMargin: 100
   buffer: 1
   cameraZDistance: -10
 --- !u!1001 &560111227

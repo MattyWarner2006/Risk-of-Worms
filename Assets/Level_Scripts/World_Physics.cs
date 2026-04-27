@@ -32,14 +32,10 @@ public class World_Physics : MonoBehaviour
         if(player.GetComponent<Rigidbody2D>().position.y >= 11)
         {
             AirPhysics();
-            Debug.Log("set to air");
-            Debug.Log("no drag");
         }
         if(player.GetComponent<Rigidbody2D>().position.y < 11)
         {
             GroundPhysics();
-            Debug.Log("set to ground");
-            Debug.Log("has drag");
         }
     }
 }
