@@ -23,9 +23,14 @@ public class Player_Movement : MonoBehaviour
             //increment players speed when activated
             case true:
                 playerSpeed++;
+                if (playerSpeed >= playerMaxSpeed)
+                {
+                    playerSpeed = 60;
+                }
+                
                 break;
             case false:
-                playerSpeed = playerMaxSpeed;
+                playerSpeed = 20;
                 break;
         }
     }
