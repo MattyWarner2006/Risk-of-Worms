@@ -4367,7 +4367,7 @@ MonoBehaviour:
   playerSpeed: 20
   playerMaxSpeed: 60
   playerRotation: 1
-  playerRotationSpeed: 1
+  playerRotationSpeed: 0.5
 --- !u!61 &239429500
 BoxCollider2D:
   m_ObjectHideFlags: 0
