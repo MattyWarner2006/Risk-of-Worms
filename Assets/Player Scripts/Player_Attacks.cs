@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class Player_Attacks : MonoBehaviour
 {
   public CircleCollider2D biteHitbox;
+  public Player_Projectile projectile;
 
 
   private void Start()
@@ -29,11 +30,7 @@ public class Player_Attacks : MonoBehaviour
   {
     if (spitAttack.action.triggered)
     {
-     
-    }
-    if (!spitAttack.action.triggered)
-    {
-      
+     projectile.Spit();
     }
   }
 }
