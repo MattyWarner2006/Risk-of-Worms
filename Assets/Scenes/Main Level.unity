@@ -169,6 +169,7 @@ MonoBehaviour:
   player: {fileID: 239429499}
   segment: {fileID: 545346039776879274, guid: f0566e150ddac4248a61b377e190f9dd, type: 3}
   tiles: {fileID: 2438984}
+  isBelowGround: 0
 --- !u!19719996 &2438984
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -4328,13 +4329,13 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 239429499}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 239429503}
+        m_TargetAssemblyTypeName: Player_Attacks, Assembly-CSharp
+        m_MethodName: Attack1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4352,13 +4353,13 @@ MonoBehaviour:
     m_ActionName: 'Player/Move[/Keyboard/d,/Keyboard/a]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 239429493}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 239429503}
+        m_TargetAssemblyTypeName: Player_Attacks, Assembly-CSharp
+        m_MethodName: Attack2
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4389,7 +4390,7 @@ MonoBehaviour:
   playerSpeed: 20
   playerMaxSpeed: 60
   playerRotation: 1
-  playerRotationSpeed: 0.5
+  playerRotationSpeed: 1
 --- !u!61 &239429500
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4500,6 +4501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3db18d5a6c47feb40b1b993a30edf080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  worldPhysics: {fileID: 1756895275}
   biteHitbox: {fileID: 239429502}
   projectile: {fileID: 3748722186231819448}
 --- !u!1001 &560111227
@@ -112541,6 +112543,7 @@ MonoBehaviour:
   player: {fileID: 239429499}
   segment: {fileID: 545346039776879274, guid: f0566e150ddac4248a61b377e190f9dd, type: 3}
   tiles: {fileID: 1756895276}
+  isBelowGround: 0
 --- !u!19719996 &1756895276
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -112643,17 +112646,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spit Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 2321749175080116524, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2461778735846766240, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4619930161713637992, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 239429499}
     - target: {fileID: 4619930161713637992, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
+      propertyPath: canSpit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619930161713637992, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
+      propertyPath: cooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619930161713637992, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 155115376}
     - target: {fileID: 4619930161713637992, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
+      propertyPath: projectileLife
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619930161713637992, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
       propertyPath: projectileSpeed
-      value: 2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4619930161713637992, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
+      propertyPath: projectileDamage
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6025940030395671234, guid: 6d9cb52dc0d5cee4eacf5f32abf0f74f, type: 3}
       propertyPath: m_LocalPosition.x

@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Player_Attacks : MonoBehaviour
 {
+  public World_Physics worldPhysics;
   public CircleCollider2D biteHitbox;
   public Player_Projectile projectile;
 
@@ -16,7 +17,7 @@ public class Player_Attacks : MonoBehaviour
   {
     if (biteAttack.action.triggered)
     {
-      biteHitbox.enabled = true;
+        biteHitbox.enabled = true;
     }
 
     if (!biteAttack.action.triggered)
@@ -30,7 +31,10 @@ public class Player_Attacks : MonoBehaviour
   {
     if (spitAttack.action.triggered)
     {
-     projectile.Spit();
+      if (worldPhysics.isBelowGround == false)
+      {
+        projectile.Spit();
+      }
     }
   }
 }
