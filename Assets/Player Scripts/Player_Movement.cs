@@ -6,12 +6,27 @@ public class Player_Movement : MonoBehaviour
     public InputActionReference movementInput;
     public InputActionReference sprintInput;
     public Rigidbody2D body;
+    public float playerHealth;
+    public float playerMaxHealth;
     public float playerSpeed;
     public float playerMaxSpeed;
     public float playerRotation;
     public float playerRotationSpeed = 1;
 
+    //Take damage from enemies + kill player when health below 0
+    public void TakeDamage(float damage)
+    {
+        playerHealth -= damage;
+        if (playerHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
+    void Start()
+    {
+        playerHealth = playerMaxHealth;
+    }
     void Update()
     {
         //read input value then rotate the player
