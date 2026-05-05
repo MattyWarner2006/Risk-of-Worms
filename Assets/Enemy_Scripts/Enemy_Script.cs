@@ -1,15 +1,18 @@
+using System.Collections;
 using UnityEngine;
 
 public class Enemy_Script : MonoBehaviour
 {
     public World_Physics playerState;
-    public Enemy_Projectile enemyProjectile;
+    public Player_Movement playerBody;
+    public Enemy_Projectile enemyProjectileStats;
+    public GameObject enemyProjectile;
+    public Transform firePoint;
     
     
     public Rigidbody2D enemyBody;
     public float enemyHealth;
     public float enemyMaxHealth;
-    public float enemyDamage;
     public float enemySpeed;
 
     public Transform[] enemyWalkPoints;
@@ -43,22 +46,51 @@ public class Enemy_Script : MonoBehaviour
         }
     }
 
-    public void ShootPlayer()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (playerState.isBelowGround == true)
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Player is below ground");
+            StartCoroutine(ShotCooldown());
         }
-
-        if (playerState.isBelowGround == false)
+        else
         {
-            FireProjectile();
+            StopAllCoroutines();    
+        }
+        
+    }
+    public void FireProjectile()
+    {
+        Vector2 fireAtPlayer = new Vector2(playerBody.body.position.x, playerBody.body.position.y);
+        GameObject spawnedProjectile = Instantiate(enemyProjectile, firePoint.position, Quaternion.identity);
+        spawnedProjectile.SetActive(true);
+        
+        Rigidbody2D rb = spawnedProjectile.GetComponent<Rigidbody2D>();
+        if(rb != null)
+        {
+         rb.AddForce(fireAtPlayer.normalized * enemyProjectileStats.projectileSpeed, ForceMode2D.Impulse);   
         }
     }
 
-    public void FireProjectile()
+    public void EnemyTakeDamage(float damage)
     {
-        
+        enemyHealth -= damage;
+        if (enemyHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject == playerBody.gameObject)
+            EnemyTakeDamage(playerBody.playerDamage);
+    }
+    
+    public IEnumerator ShotCooldown()
+    {
+        yield return new WaitForSeconds(1);
+        FireProjectile();
+        StartCoroutine(ShotCooldown());
     }
 }
 

@@ -12,6 +12,7 @@ public class Player_Movement : MonoBehaviour
     public float playerMaxSpeed;
     public float playerRotation;
     public float playerRotationSpeed = 1;
+    public float playerDamage = 1;
 
     //Take damage from enemies + kill player when health below 0
     public void TakeDamage(float damage)
