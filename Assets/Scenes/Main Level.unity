@@ -4707,6 +4707,10 @@ PrefabInstance:
       propertyPath: playerBody
       value: 
       objectReference: {fileID: 239429499}
+    - target: {fileID: 2456827604160926447, guid: 789f2cf9a5997fe478359f4d11b54f3d, type: 3}
+      propertyPath: projectileLifetime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7977865246540904603, guid: 789f2cf9a5997fe478359f4d11b54f3d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -115.4
@@ -4936,6 +4940,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4426351811348988351, guid: c3423cf45ccea454d87c08e5eeefbb03, type: 3}
+      propertyPath: enemySpeed
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4426351811348988351, guid: c3423cf45ccea454d87c08e5eeefbb03, type: 3}
       propertyPath: playerBody
       value: 

@@ -54,9 +54,8 @@ public class Enemy_Script : MonoBehaviour
         }
         else
         {
-            StopAllCoroutines();    
+            StopAllCoroutines();
         }
-        
     }
     public void FireProjectile()
     {
@@ -76,6 +75,11 @@ public class Enemy_Script : MonoBehaviour
         enemyHealth -= damage;
         if (enemyHealth <= 0)
         {
+            playerBody.playerHealth += 1;
+            if (playerBody.playerHealth >= playerBody.playerMaxHealth)
+            {
+                playerBody.playerHealth = playerBody.playerMaxHealth;
+            }
             Destroy(gameObject);
         }
     }
