@@ -8,6 +8,7 @@ public class Enemy_Script : MonoBehaviour
     public Enemy_Projectile enemyProjectileStats;
     public GameObject enemyProjectile;
     public Transform firePoint;
+    public bool fireTimer = false;
     
     
     public Rigidbody2D enemyBody;
@@ -48,13 +49,15 @@ public class Enemy_Script : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && fireTimer == false)
         {
+            fireTimer = true;
             StartCoroutine(ShotCooldown());
-        }
-        else
-        {
-            StopAllCoroutines();
         }
     }
     public void FireProjectile()
@@ -66,7 +69,7 @@ public class Enemy_Script : MonoBehaviour
         Rigidbody2D rb = spawnedProjectile.GetComponent<Rigidbody2D>();
         if(rb != null)
         {
-         rb.AddForce(fireAtPlayer.normalized * enemyProjectileStats.projectileSpeed, ForceMode2D.Impulse);   
+         rb.AddForce(fireAtPlayer * enemyProjectileStats.projectileSpeed, ForceMode2D.Impulse);   
         }
     }
 
@@ -92,9 +95,9 @@ public class Enemy_Script : MonoBehaviour
     
     public IEnumerator ShotCooldown()
     {
-        yield return new WaitForSeconds(1);
         FireProjectile();
-        StartCoroutine(ShotCooldown());
+        yield return new WaitForSeconds(2);
+        fireTimer = false;
     }
 }
 
