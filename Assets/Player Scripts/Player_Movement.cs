@@ -6,7 +6,8 @@ public class Player_Movement : MonoBehaviour
     public InputActionReference movementInput;
     public InputActionReference sprintInput;
     public Rigidbody2D body;
-    
+
+    public float score= 0;
     public float playerHealth;
     public float playerMaxHealth;
     public float playerSpeed;

@@ -62,7 +62,7 @@ public class Enemy_Script : MonoBehaviour
     }
     public void FireProjectile()
     {
-        Vector2 fireAtPlayer = new Vector2(playerBody.body.position.x, playerBody.body.position.y);
+        Vector2 fireAtPlayer = new Vector2(playerBody.body.position.x, playerBody.body.position.y).normalized;
         GameObject spawnedProjectile = Instantiate(enemyProjectile, firePoint.position, Quaternion.identity);
         spawnedProjectile.SetActive(true);
         
@@ -83,6 +83,8 @@ public class Enemy_Script : MonoBehaviour
             {
                 playerBody.playerHealth = playerBody.playerMaxHealth;
             }
+
+            playerBody.score = playerBody.score + 50;
             Destroy(gameObject);
         }
     }
