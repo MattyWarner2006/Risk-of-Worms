@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Enemy_Script : MonoBehaviour
 {
-    public World_Physics playerState;
     public Player_Movement playerBody;
     public Enemy_Projectile enemyProjectileStats;
     public GameObject enemyProjectile;
@@ -46,12 +45,7 @@ public class Enemy_Script : MonoBehaviour
             target = enemyWalkPoints[0];
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        
-    }
-
+    
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && fireTimer == false)
@@ -91,7 +85,7 @@ public class Enemy_Script : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == playerBody.gameObject)
+        if (collision.collider == playerBody.circleCollider)
             EnemyTakeDamage(playerBody.playerDamage);
     }
     

@@ -31,6 +31,7 @@ public class Menu_Manager : MonoBehaviour
     public void LoadScene(int level)
     {
         SceneManager.LoadScene(level);
+        Time.timeScale = 1;
     }
     public void OnApplicationQuit()
     {
@@ -40,5 +41,6 @@ public class Menu_Manager : MonoBehaviour
     public void RetryGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
     }
 }

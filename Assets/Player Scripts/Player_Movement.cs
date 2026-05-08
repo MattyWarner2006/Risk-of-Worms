@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Timeline;
 
 public class Player_Movement : MonoBehaviour
 {
     public InputActionReference movementInput;
     public InputActionReference sprintInput;
+    public CircleCollider2D circleCollider;
     public Rigidbody2D body;
+    public GameObject retryScreenUi;
 
-    public float score= 0;
+    public float score;
     public float playerHealth;
     public float playerMaxHealth;
     public float playerSpeed;
@@ -15,7 +18,6 @@ public class Player_Movement : MonoBehaviour
     public float playerRotation;
     public float playerRotationSpeed = 1;
     public float playerDamage = 1;
-    public float playerLifeTime = 0.1f;
 
     //Take damage from enemies + kill player when health below 0
     public void TakeDamage(float damage)
@@ -23,21 +25,21 @@ public class Player_Movement : MonoBehaviour
         playerHealth -= damage;
         if (playerHealth <= 0)
         {
-            Destroy(gameObject);
+            retryScreenUi.SetActive(true);
+            Time.timeScale = 0;
         }
     }
-
+    
     void Start()
     {
         playerHealth = playerMaxHealth;
     }
     void Update()
     {
+        
         //read input value then rotate the player
         playerRotation = movementInput.action.ReadValue<float>();
         body.transform.Rotate(0, 0, playerRotation * playerRotationSpeed);
-
-        playerHealth -= playerLifeTime * Time.deltaTime;
 
         switch (sprintInput.action.IsInProgress())
         {
