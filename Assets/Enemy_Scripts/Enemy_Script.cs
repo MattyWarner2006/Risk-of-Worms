@@ -78,7 +78,7 @@ public class Enemy_Script : MonoBehaviour
         enemyHealth -= damage;
         if (enemyHealth <= 0)
         {
-            playerBody.playerHealth += 1;
+            playerBody.playerHealth += 0.25f;
             if (playerBody.playerHealth >= playerBody.playerMaxHealth)
             {
                 playerBody.playerHealth = playerBody.playerMaxHealth;

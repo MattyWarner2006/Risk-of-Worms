@@ -15,6 +15,7 @@ public class Player_Movement : MonoBehaviour
     public float playerRotation;
     public float playerRotationSpeed = 1;
     public float playerDamage = 1;
+    public float playerLifeTime = 0.1f;
 
     //Take damage from enemies + kill player when health below 0
     public void TakeDamage(float damage)
@@ -35,6 +36,8 @@ public class Player_Movement : MonoBehaviour
         //read input value then rotate the player
         playerRotation = movementInput.action.ReadValue<float>();
         body.transform.Rotate(0, 0, playerRotation * playerRotationSpeed);
+
+        playerHealth -= playerLifeTime * Time.deltaTime;
 
         switch (sprintInput.action.IsInProgress())
         {
