@@ -43,4 +43,5 @@ public class Menu_Manager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
     }
+    
 }

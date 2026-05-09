@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy_Script : MonoBehaviour
 {
+    public Popup_Ui storyUi;
     public Player_Movement playerBody;
     public Enemy_Projectile enemyProjectileStats;
     public GameObject enemyProjectile;
@@ -79,13 +80,14 @@ public class Enemy_Script : MonoBehaviour
             }
 
             playerBody.score = playerBody.score + 50;
+            storyUi.ShowUI();
             Destroy(gameObject);
         }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider == playerBody.circleCollider)
+        if (collision.collider == playerBody.hitBox)
             EnemyTakeDamage(playerBody.playerDamage);
     }
     

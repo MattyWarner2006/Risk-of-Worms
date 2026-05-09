@@ -6,7 +6,7 @@ public class Player_Movement : MonoBehaviour
 {
     public InputActionReference movementInput;
     public InputActionReference sprintInput;
-    public CircleCollider2D circleCollider;
+    public BoxCollider2D hitBox;
     public Rigidbody2D body;
     public GameObject retryScreenUi;
 
