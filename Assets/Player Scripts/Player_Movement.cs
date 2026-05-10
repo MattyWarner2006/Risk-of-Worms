@@ -4,6 +4,7 @@ using UnityEngine.Timeline;
 
 public class Player_Movement : MonoBehaviour
 {
+    public AudioManager audioManager;
     public InputActionReference movementInput;
     public InputActionReference sprintInput;
     public BoxCollider2D hitBox;
@@ -33,6 +34,7 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         playerHealth = playerMaxHealth;
+        audioManager.BackgroundMusic();
     }
     void Update()
     {

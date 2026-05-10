@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy_Script : MonoBehaviour
 {
+    public AudioManager audioManager;
     public Popup_Ui storyUi;
     public Player_Movement playerBody;
     public Enemy_Projectile enemyProjectileStats;
@@ -81,6 +82,7 @@ public class Enemy_Script : MonoBehaviour
 
             playerBody.score = playerBody.score + 50;
             storyUi.ShowUI();
+            audioManager.EatEnemy();
             Destroy(gameObject);
         }
     }
