@@ -14,6 +14,12 @@ public class Popup_Ui : MonoBehaviour
     public bool fifthPopUp;
 
 
+    public void Start()
+    {
+        uiPopUps[0].SetActive(true);
+        firstPopUp = true;
+        Time.timeScale = 0;
+    }
     public void DisableUi()
     {
         if (firstPopUp == true)
@@ -44,13 +50,7 @@ public class Popup_Ui : MonoBehaviour
     }
     public void ShowUI()
     {
-        if (Mathf.Approximately(player.score, 0))
-        {
-            uiPopUps[0].SetActive(true);
-            firstPopUp = true;
-            Time.timeScale = 0;
-        }
-        else if (Mathf.Approximately(player.score, 500))
+        if (Mathf.Approximately(player.score, 500))
         {
             uiPopUps[1].SetActive(true);
             secondPopUp = true;

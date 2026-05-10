@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip mainMenu;
     public AudioClip background;
     public AudioClip enemyEaten;
+    public AudioClip endMusic;
     
 
     public void MainMenu()
@@ -29,6 +30,12 @@ public class AudioManager : MonoBehaviour
         sfxSource.clip = enemyEaten;
         sfxSource.Play();
     }
-    
+
+    public void EndMusic()
+    {
+        musicSource.clip = endMusic;
+        musicSource.Play();
+    }
+
 
 }
