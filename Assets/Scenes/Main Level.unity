@@ -5733,6 +5733,7 @@ MonoBehaviour:
   mainMenu: {fileID: 0}
   background: {fileID: 8300000, guid: 99b3416857af7274196b950a57ac93e8, type: 3}
   enemyEaten: {fileID: 8300000, guid: 4cb76f4a10112ad46ad47cef8ed88c17, type: 3}
+  endMusic: {fileID: 0}
 --- !u!4 &739221637
 Transform:
   m_ObjectHideFlags: 0

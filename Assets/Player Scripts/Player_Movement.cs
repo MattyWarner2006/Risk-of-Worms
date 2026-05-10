@@ -38,6 +38,8 @@ public class Player_Movement : MonoBehaviour
     }
     void Update()
     {
+
+        playerHealth -= 0.1f * Time.deltaTime;
         
         //read input value then rotate the player
         playerRotation = movementInput.action.ReadValue<float>();
