@@ -11,6 +11,7 @@ public class Popup_Ui : MonoBehaviour
     public bool secondPopUp;
     public bool thirdPopUp;
     public bool fourthPopUp;
+    public bool fifthPopUp;
 
 
     public void DisableUi()
@@ -34,32 +35,43 @@ public class Popup_Ui : MonoBehaviour
         {
             uiPopUps[3].SetActive(false);
         }
+
+        if (fifthPopUp == true)
+        {
+            uiPopUps[4].SetActive(false);
+        }
         Time.timeScale = 1;
     }
     public void ShowUI()
     {
-        if (Mathf.Approximately(player.score, 500))
+        if (Mathf.Approximately(player.score, 0))
         {
             uiPopUps[0].SetActive(true);
             firstPopUp = true;
             Time.timeScale = 0;
         }
-        else if (Mathf.Approximately(player.score, 1000))
+        else if (Mathf.Approximately(player.score, 500))
         {
             uiPopUps[1].SetActive(true);
             secondPopUp = true;
             Time.timeScale = 0;
         }
-        else if (Mathf.Approximately(player.score, 1500))
+        else if (Mathf.Approximately(player.score, 1000))
         {
             uiPopUps[2].SetActive(true);
             thirdPopUp = true;
             Time.timeScale = 0;
         }
-        else if (Mathf.Approximately(player.score, 2000))
+        else if (Mathf.Approximately(player.score, 1500))
         {
             uiPopUps[3].SetActive(true);
             fourthPopUp = true;
+            Time.timeScale = 0;
+        }
+        else if (Mathf.Approximately(player.score, 2000))
+        {
+            uiPopUps[4].SetActive(true);
+            fifthPopUp = true;
             Time.timeScale = 0;
         }
         else if (Mathf.Approximately(player.score, 2500))

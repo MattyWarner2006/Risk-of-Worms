@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 91551146}
   - component: {fileID: 91551145}
   m_Layer: 5
-  m_Name: Replay
+  m_Name: Quit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -283,8 +283,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2116387525}
         m_TargetAssemblyTypeName: Menu_Manager, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
+        m_MethodName: OnApplicationQuit
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 1687641321}
   - component: {fileID: 1687641320}
   m_Layer: 5
-  m_Name: Quit
+  m_Name: Replay?
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,8 +842,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2116387525}
         m_TargetAssemblyTypeName: Menu_Manager, Assembly-CSharp
-        m_MethodName: OnApplicationQuit
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
