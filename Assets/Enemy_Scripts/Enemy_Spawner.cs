@@ -20,7 +20,7 @@ public class Enemy_Spawner : MonoBehaviour
      //wait inputted time, then spawn enemy
     public IEnumerator EnemySpawner()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         SpawnEnemy();
         StartCoroutine(EnemySpawner());
     }

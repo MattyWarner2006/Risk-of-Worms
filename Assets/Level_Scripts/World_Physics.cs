@@ -26,7 +26,11 @@ public class World_Physics : MonoBehaviour
         player.GetComponent<Rigidbody2D>().gravityScale = 2;
         player.GetComponent<Rigidbody2D>().linearDamping = 0.25f;
         segment.GetComponent<Rigidbody2D>().gravityScale = 2;
-        player.GetComponent<Player_Movement>().playerSpeed = 10;
+        player.GetComponent<Player_Movement>().playerSpeed -= 1;
+        if (player.GetComponent<Player_Movement>().playerSpeed < 5)
+        {
+            player.GetComponent<Player_Movement>().playerSpeed = 5;
+        }
         isBelowGround = false;
     }
 
