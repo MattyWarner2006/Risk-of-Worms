@@ -6384,7 +6384,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: How did i get here... Why am i so hungry...
+  m_text: 'Why was i sent here ....  Why am i so hungry...
+
+
+    What am i even eating...'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10470,10 +10473,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'where.. am i ?            my body...  its hurts....
+  m_text: 'where.. am i ?            my body...  it hurts....
 
-    eat....    i
-    must eat....             i need to survive.....'
+    eat....    i must
+    eat....             i need to survive.....'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10609,11 +10612,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The pain......                  Its fading.....
-
-
-    Just a few more
-    meals and i''ll be okay...'
+  m_text: "The pain......                  Its fading.....\n\n i'm going to  be okay...                   
+    I have to continue.."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10918,7 +10918,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: My hunger grows... Yet my body continues to burn
+  m_text: 'My hunger grows... Yet my body continues to burn
+
+
+    I need this to
+    stop.
+
+
+    NOW.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -115151,6 +115158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0ef00d52ff6d442a913ffa6ecc2e56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 239429499}
   enemy: {fileID: 1164551321}
   spawnArea:
   - {fileID: 1591668169}
@@ -115632,7 +115640,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: I should probably keep eating... My body... its burning...
+  m_text: "I should probably keep eating... My body... its burning... \n\nI won't
+    last long like this..."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

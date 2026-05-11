@@ -5,6 +5,7 @@ using Random = UnityEngine.Random;
 
 public class Enemy_Spawner : MonoBehaviour
 {
+    public Player_Movement player;
     public GameObject enemy;
     public Transform[] spawnArea;
 
@@ -30,5 +31,13 @@ public class Enemy_Spawner : MonoBehaviour
     {
         GameObject spawnedEnemy = Instantiate(enemy, spawnArea[Random.Range(0, spawnArea.Length)].position,Quaternion.identity);
         spawnedEnemy.SetActive(true);
+    }
+
+    public void Update()
+    {
+        if(Mathf.Approximately(player.score, 2500))
+        {
+            StopAllCoroutines();
+        }
     }
 }

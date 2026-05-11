@@ -286,6 +286,7 @@ MonoBehaviour:
   mainMenu: {fileID: 8300000, guid: 1cf17f8d2e363a84390967a04d8a14e9, type: 3}
   background: {fileID: 0}
   enemyEaten: {fileID: 0}
+  endMusic: {fileID: 0}
 --- !u!4 &318808633
 Transform:
   m_ObjectHideFlags: 0
@@ -1236,7 +1237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &978408906
 MonoBehaviour:
   m_ObjectHideFlags: 0
