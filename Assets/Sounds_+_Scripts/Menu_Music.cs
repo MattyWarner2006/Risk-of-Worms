@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Menu_Music : MonoBehaviour
 {
-    public AudioManager music;
+    public Audio_Manager music;
     
     public void Start()
     {

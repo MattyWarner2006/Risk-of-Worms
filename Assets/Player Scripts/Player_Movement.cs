@@ -4,7 +4,7 @@ using UnityEngine.Timeline;
 
 public class Player_Movement : MonoBehaviour
 {
-    public AudioManager audioManager;
+    public Audio_Manager audioManager;
     public InputActionReference movementInput;
     public InputActionReference sprintInput;
     public BoxCollider2D hitBox;

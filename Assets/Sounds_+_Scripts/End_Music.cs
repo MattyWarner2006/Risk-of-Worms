@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class End_Music : MonoBehaviour
 {
-   public AudioManager music;
+   public Audio_Manager music;
 
 
    public void Start()
