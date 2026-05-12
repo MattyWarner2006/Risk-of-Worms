@@ -8,6 +8,7 @@ public class Score_UI : MonoBehaviour
 
     private void Update()
     {
+        //display player score to screen
         scoreText.text = "Score : " + player.score.ToString();
     }
 }

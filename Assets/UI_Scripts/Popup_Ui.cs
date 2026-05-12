@@ -12,6 +12,7 @@ public class Popup_Ui : MonoBehaviour
     public bool fifthPopUp;
 
 
+    // all the code below displays ui in game according to the score of the player
     public void Start()
     {
         uiPopUps[0].SetActive(true);

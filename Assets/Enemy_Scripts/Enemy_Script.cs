@@ -22,12 +22,14 @@ public class Enemy_Script : MonoBehaviour
 
     void Start()
     {
+        //set enemy max health and first target (for enemy to move to)
         target = enemyWalkPoints[0];
         enemyHealth = enemyMaxHealth;
     }
 
     void Update()
     {
+        //moves enemy towards the target, then changes target
         transform.position = Vector2.MoveTowards(transform.position,target.position,enemySpeed * Time.deltaTime);
         if (enemyBody.position.x >= target.position.x)
         {
@@ -37,6 +39,7 @@ public class Enemy_Script : MonoBehaviour
     
     private void ChangeTarget()
     {
+        //change enemys target if enemy reaches the target before
         if (transform.position.x == enemyWalkPoints[0].position.x)
         {
             target = enemyWalkPoints[1];
@@ -50,6 +53,7 @@ public class Enemy_Script : MonoBehaviour
     
     private void OnTriggerExit2D(Collider2D other)
     {
+        //when player is detected, fire projectile
         if (other.CompareTag("Player") && fireTimer == false)
         {
             fireTimer = true;
@@ -58,6 +62,7 @@ public class Enemy_Script : MonoBehaviour
     }
     public void FireProjectile()
     {
+        // spawn and shoot projectile at player
         Vector2 fireAtPlayer = new Vector2(playerBody.body.position.x, playerBody.body.position.y).normalized;
         GameObject spawnedProjectile = Instantiate(enemyProjectile, firePoint.position, Quaternion.identity);
         spawnedProjectile.SetActive(true);
@@ -71,15 +76,17 @@ public class Enemy_Script : MonoBehaviour
 
     public void EnemyTakeDamage(float damage)
     {
+        //take damage from player and die when health is below 0
         enemyHealth -= damage;
         if (enemyHealth <= 0)
         {
+            //heals the player when killed
             playerBody.playerHealth += 0.25f;
             if (playerBody.playerHealth >= playerBody.playerMaxHealth)
             {
                 playerBody.playerHealth = playerBody.playerMaxHealth;
             }
-
+//updates score in player and also calls the popui when certain score is reached + plays sound effect on death
             playerBody.score = playerBody.score + 50;
             storyUi.ShowUI();
             audioManager.EatEnemy();
@@ -89,12 +96,14 @@ public class Enemy_Script : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
+        //if enemy collides with player, take damage
         if (collision.collider == playerBody.hitBox)
             EnemyTakeDamage(playerBody.playerDamage);
     }
     
     public IEnumerator ShotCooldown()
     {
+        //shot cooldown for enemy, stops constant firing
         FireProjectile();
         yield return new WaitForSeconds(2);
         fireTimer = false;

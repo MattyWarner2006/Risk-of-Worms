@@ -35,6 +35,7 @@ public class Enemy_Spawner : MonoBehaviour
 
     public void Update()
     {
+        //when player reaches the highest score, end coroutine
         if(Mathf.Approximately(player.score, 2500))
         {
             StopAllCoroutines();

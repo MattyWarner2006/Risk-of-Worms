@@ -7,6 +7,7 @@ public class End_Music : MonoBehaviour
 
    public void Start()
    {
+      // play end screen music
       music.EndMusic();
    }
 }

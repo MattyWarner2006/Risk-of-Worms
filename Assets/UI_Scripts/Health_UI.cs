@@ -9,6 +9,7 @@ public TextMeshProUGUI healthText;
 
    private void Update()
    {
+      // displays player health to screen
       healthText.text = player.playerHealth.ToString() + " : Health";
    }
 }

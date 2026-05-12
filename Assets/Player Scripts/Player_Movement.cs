@@ -32,12 +32,13 @@ public class Player_Movement : MonoBehaviour
     
     void Start()
     {
+        //play music and set players health to max
         playerHealth = playerMaxHealth;
         audioManager.BackgroundMusic();
     }
     void Update()
     {
-
+// decrease players health over time
         playerHealth -= 0.1f * Time.deltaTime;
         
         //read input value then rotate the player

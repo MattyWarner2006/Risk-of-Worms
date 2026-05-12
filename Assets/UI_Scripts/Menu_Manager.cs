@@ -15,6 +15,7 @@ public class Menu_Manager : MonoBehaviour
 
     public void ToggleControlsPanel()
     {
+        //hide and display controls ui
         if (controlsPanelActive)
         {
             menuPanel.SetActive(true);
@@ -30,16 +31,19 @@ public class Menu_Manager : MonoBehaviour
 
     public void LoadScene(int level)
     {
+        //load next level
         SceneManager.LoadScene(level);
         Time.timeScale = 1;
     }
     public void OnApplicationQuit()
     {
+        //quit game
         Application.Quit();
     }
 
     public void RetryGame()
     {
+        //restart game when pressed
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
     }
